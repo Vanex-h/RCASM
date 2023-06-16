@@ -42,11 +42,11 @@
 		<div id="banner">
 			<div class="bannerlogo"></div>
 			<div class="container">
-				<div class="text_header">Management Information System</div>
-			<div class="right" style="text-align: right;">
+				<div class="text_header">RCA Management Information System</div>
+			<div class="right" style="display: flex; flex-direction: row; justify-content: space-evenly;">
 				<c:if test="${authenticatedUser !=null}">
-					<b><a href="listuser.php?page=profile&&id=${authenticatedUser.id}"><button>Profile
-						</button></a> | <img src="icons/user.png" /> <font color="#ffffff">${authenticatedUser.fullName}</font>
+					<b style="display: flex; flex-direction: row; justify-content: space-evenly; width:100%;"><a href="listuser.php?page=profile&&id=${authenticatedUser.id}"><button>Profile
+					</button></a> | <div><img src="icons/user.png" /> <font color="#ffffff">${authenticatedUser.fullName}</font></div>
 						| <a href="login.php?"><font color="#ffffff">Logout</font></a>
 					</b>
 				</c:if>
