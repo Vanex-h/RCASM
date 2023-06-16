@@ -42,7 +42,7 @@
 		<div id="banner">
 			<div class="bannerlogo"></div>
 			<div class="container">
-				<div class="text_header">RCA Management Information System</div>
+				<div class="text_header">Management Information System</div>
 			<div class="right" style="text-align: right;">
 				<c:if test="${authenticatedUser !=null}">
 					<b><a href="listuser.php?page=profile&&id=${authenticatedUser.id}"><button>Profile

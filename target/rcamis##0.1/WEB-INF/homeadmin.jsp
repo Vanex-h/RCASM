@@ -7,7 +7,7 @@
 
 <div id="middle">
 
-	<img src="images/fellow.jpg" style="width:100%; object-fit: contain; height: auto; opacity: 0.7; brightness:0.7;filter: blur(5px);" />
+	<img src="images/fellow.jpg" style="width:100%; object-fit: contain; height: auto; brightness:0.7;filter: blur(5px);" />
 
 </div>
 <%@ include file="footer.jsp"%>

@@ -6,7 +6,7 @@ body {
 }
 
 thead {
-	color: #00009C;
+	color: #6c66e3;
 	font-size: 14px;
 }
 
@@ -130,7 +130,7 @@ hr {
 	border: 1px solid #ccc;
 	border-bottom: 1px solid #777;
 	border-style: solid none solid none;
-	color: #00009C;
+	color: #6c66e3;
 	text-align: center;
 	width: 1000px;
 	font-size: x-small;
@@ -152,7 +152,7 @@ hr {
 }
 
 a {
-	color: #00009C;
+	color: #6c66e3;
 	cursor: pointer;
 	text-decoration: none;
 	padding-left: 5px;
@@ -166,7 +166,7 @@ a:HOVER {
 
 button {
 	height: 20px;
-	color: #00009C;
+	color: #6c66e3;
 	cursor: pointer;
 	background: #fff url("images/bg_image_nav.jpg") bottom repeat-x;
 	border: 1px solid #ccc;
@@ -177,7 +177,7 @@ button:HOVER {
 	height: 20px;
 	color: #fff;
 	cursor: pointer;
-	background: #00009C;
+	background: #6c66e3;
 	border: 1px solid #ccc;
 	border-style: solid solid solid solid;
 }
@@ -188,7 +188,7 @@ button:HOVER {
 	width: 630px;
 	font-size: 34px;
 	font-weight: bolder;
-	color: #00009C;
+	color: #6c66e3;
 	font-variant: small-caps;
 	/*text-align: right;*/
 	/*float: right;*/
@@ -201,19 +201,20 @@ button:HOVER {
 	width: 360px;
 	font-size: 25px;
 	font-weight: bolder;
-	color: #00009C;
+	color: #6c66e3;
 	font-variant: small-caps;
 	text-align: right;
 }
 
 .right {
 	padding: 1px 5px 0px 10px;
-	width: 885px;
+	width: 100%;
+	text-align: center;
 	font-size: 14px;
 	font-weight: bolder;
 	float: right;
 	margin-right: 0px;
-	background: #00009C;
+	background: #6c66e3;
 }
 
 .middleright {
@@ -275,7 +276,7 @@ button:HOVER {
 }
 
 #menu>li>a {
-	color: #00009C;
+	color: #6c66e3;
 	font-weight: bold;
 }
 
@@ -287,14 +288,14 @@ button:HOVER {
 /* Submenu
 ------------------------------------------*/
 #menu ul li a {
-	color: #00009C;
-	border: 5px solid red;
+	color: #fff;
+	border: solid #ffffff7a;
 }
 
 #menu ul li:hover a {
-	background: #00009C;
+	background: #6c66e3;
 	color: #fff;
-	border: 5px solid red;
+	border: 5px solid white;
 }
 
 #menu li:hover ul.noJS {
@@ -319,8 +320,8 @@ button:HOVER {
 }
 
 #menu ul {
-	border: 5px solid red;
-	background: #00009C;
+	border: 5px solid transparent;
+
 	position: absolute;
 	display: none;
 	z-index: 999;
@@ -356,14 +357,14 @@ ul.primary li.active a,ul.secondary li.active a {
 /* Tabs formating
 ------------------------------------------*/
 ul.tabs {
-	border-bottom: 3px solid #00009C;
+	border-bottom: 3px solid #6c66e3;
 	float: left;
 	list-style: none;
 	margin: 0;
 	overflow: auto; 
 	padding: 0;
 	width: 100%;
-	border: 5px solid red;
+	border: 5px solid white;
 }
 
 ul.tabs li {
@@ -372,7 +373,7 @@ ul.tabs li {
 	overflow: hidden;
 	padding: 0;
 	position: relative;
-	border: 5px solid red;
+	border: 5px solid white;
 }
 
 ul.tabs li a {
@@ -386,18 +387,18 @@ ul.tabs li a {
 }
 
 ul.tabs li a:hover {
-	background:#00009C;
+	background:#6c66e3;
 	color: #fff;
 }
 
 ul.tabs li.active {
-	background: #00009C;
+	background: #6c66e3;
 	color: #fff;
 }
 
 html ul.tabs li.active,html ul.tabs li.active a:hover,html ul.tabs li.active a
 	{
-	background: #00009C;
+	background: #6c66e3;
 	color: #fff;
 }
 
@@ -437,13 +438,13 @@ html .clear-block {
 fieldset{
   padding-top: 1em;
   padding-bottom: 1em;
-  border: 1px solid #00009C;
+  border: 1px solid #6c66e3;
 }
 
 #middle legend{
   color: #fff;
-  border: 1px solid #00009C;
+  border: 1px solid #6c66e3;
   padding: 1px 5px 0 15px;
-  background: #00009C url("images/star.png") left top no-repeat;
-	border: 5px solid red;
+  background: #6c66e3 url("images/star.png") left top no-repeat;
+	/*border: 5px solid red;*/
 }

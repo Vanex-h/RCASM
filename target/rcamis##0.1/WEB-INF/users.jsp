@@ -11,6 +11,26 @@
 <link rel="stylesheet" href="css/screen.css" type="text/css" />
 <link rel="stylesheet" href="css/site.css" type="text/css" />
 <title>User Registrations</title>
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td, th {
+			border: 1px solid #dddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		thead{
+			background-color:#6c66e3;
+			color: white;
+			font-family: 'Quicksand', sans-serif;
+			font-weight: bold;
+		}
+	</style>
 </head>
 <body>
 	<div id="layout">

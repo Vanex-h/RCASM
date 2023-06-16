@@ -22,7 +22,7 @@
             padding: 8px;
         }
         thead {
-            background-color: #008DD4;
+            background-color: #6c66e3;
             color: white;
             font-weight: bold;
         }

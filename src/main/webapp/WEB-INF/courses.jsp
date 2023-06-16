@@ -32,7 +32,7 @@
     }
 
     thead{
-      background-color:#00009C;
+      background-color:#6c66e3;
       color: white;
       font-family: 'Quicksand', sans-serif;
       font-weight: bold;
