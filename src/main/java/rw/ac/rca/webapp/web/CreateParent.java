@@ -74,11 +74,9 @@ public class CreateParent extends HttpServlet {
         if (pageRedirect != null) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             if (pageRedirect.equals("createparent")) {
-//                Parent parent1 = parentDAO.getParentById(Integer.parseInt(request.getParameter("parent")));
 
                 Parent parent = null;
-//                Student student =studentDAO.getStudentById(Integer.parseInt(request.getParameter("studentId")));
-//                System.out.println("gggghhgh"+ student);
+
 
                 try {
                     parent =new Parent(
@@ -91,18 +89,11 @@ public class CreateParent extends HttpServlet {
 
 
 
-//                parent.setFirstName(request.getParameter("firstName"));
-//                parent.setLastName(request.getParameter("lastName"));
-//                parent.setPhoneNumber(request.getParameter("phoneNumber"));
-////              parent.setStudent(student);
-//                parent.setNationalId(request.getParameter("nationalId"));
-//                parent.setSchoolFees(Long.parseLong(request.getParameter("schoolfees")));
-//                    parent.setDateOfBirth(simpleDateFormat.parse(request.getParameter("dateOfBirth")));
-                }
+      }
                 catch (ParseException e) {
                     throw new RuntimeException(e);
                 }
-//
+
 
                 // Saving the parent;
                 try {

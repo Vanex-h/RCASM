@@ -28,7 +28,7 @@
 			</div>
 			<div class="pb-3 flex flex-col justify-between">
 				<span class="text-white pb-2">Password </span>
-				<input type="text" name="password" class="border-1 border-white bg-transparent text-white focus:outline-none"  />
+				<input type="password" name="password" class="border-1 border-white bg-transparent text-white focus:outline-none"  />
 			</div>
 			<button type="submit" class="bg-transparent text-white w-48 h-14 rounded-xl self-center hover:h-16 hover:border-2">Submit</button>
 			<a href="createuser.php?page=createuser" class="hover:underline flex flex-row justify-around w-2/3 mt-2 text-xs text-white">
