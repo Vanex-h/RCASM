@@ -35,17 +35,15 @@ public abstract class Person implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public String getFullName() {
+	
+	@Column(nullable = false)
+	public String getFirstName() {
 		return firstName;
 	}
 
-	public void setFullName(String fullName) {
-		this.firstName = fullName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-
-	@Column(nullable = false)
-
 	
 	//@Column(nullable = false)
 	public String getLastName() {
@@ -75,9 +73,9 @@ public abstract class Person implements Serializable{
 	public Person() {
 	}
 
-	public Person(	String firstName,String lastName, Date dateOfBirth, String phoneNumber) {
-		this.firstName=firstName;
-		this.lastName=lastName;
+	public Person(String firstName, String lastName, Date dateOfBirth, String phoneNumber) {
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.dateOfBirth = dateOfBirth;
 		this.phoneNumber = phoneNumber;
 	}

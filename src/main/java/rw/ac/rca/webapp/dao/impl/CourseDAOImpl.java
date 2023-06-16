@@ -3,11 +3,12 @@
  */
 package rw.ac.rca.webapp.dao.impl;
 
-import java.util.List;
-
 import org.hibernate.Query;
 import rw.ac.rca.webapp.dao.CourseDAO;
 import rw.ac.rca.webapp.orm.Course;
+import rw.ac.rca.webapp.orm.Employee;
+
+import java.util.List;
 
 /**
  * @author Aphrodice Rwagaju
@@ -110,4 +111,19 @@ public class CourseDAOImpl extends DAO implements CourseDAO {
 			return null;
 		}
 	}
+	public Course searchCourseByName(String name) {
+		try {
+			begin();
+			Query query = getSession().createQuery("from Course where name= :name");
+			query.setString("name", name);
+			Course course = (Course) query.uniqueResult();
+			commit();
+			return course;
+		} catch (Exception e) {
+			rollback();
+			return null;
+		}
+	}
+
+
 }

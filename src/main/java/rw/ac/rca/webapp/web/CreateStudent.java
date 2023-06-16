@@ -1,119 +1,112 @@
 package rw.ac.rca.webapp.web;
 
+import rw.ac.rca.webapp.dao.AddressDAO;
 import rw.ac.rca.webapp.dao.StudentDAO;
+import rw.ac.rca.webapp.dao.impl.AddressDAOImpl;
 import rw.ac.rca.webapp.dao.impl.StudentDAOImpl;
+import rw.ac.rca.webapp.orm.Address;
 import rw.ac.rca.webapp.orm.Student;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.validation.constraints.Null;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
+/**
+ * Servlet implementation class CreateCourse
+ */
 public class CreateStudent extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private StudentDAO studentDAO = StudentDAOImpl.getInstance();
+    private AddressDAO addressDAO = AddressDAOImpl.getInstance();
 
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
     public CreateStudent() {
         super();
-
+        // TODO Auto-generated constructor stub
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
         String pageRedirect = request.getParameter("page");
         HttpSession httpSession = request.getSession();
         Object user = httpSession.getAttribute("authenticatedUser");
+        System.out.println("The user in session is: " + user);
+
+        if (pageRedirect != null) {
+            System.out.println("The print statement is and the only is: " + pageRedirect);
+            if (pageRedirect.equals("createstudent")) {
+                List<Address> addressList = addressDAO.getAllAddresses();
+
+                request.setAttribute("address", addressList);
+                request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request, response);
+            } else {
+                request.setAttribute("CreateUsererror ", "No user found");
+                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+            }
+        } else {
+            request.setAttribute("CreateUsererror ", "No user found");
+            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+        }
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String pageRedirect = request.getParameter("page");
+        HttpSession httpSession = request.getSession();
+        Object user = httpSession.getAttribute("authenticatedUser");
+
         if (pageRedirect != null) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             if (pageRedirect.equals("createstudent")) {
-                Student student = null;
+                System.out.println("Thw address id is : " + request.getParameter("address"));
+                int addressId = Integer.parseInt(request.getParameter("address"));
+                Address address = addressDAO.getAddressById(Integer.parseInt(request.getParameter("address")));
+
+                Student student = new Student();
                 try {
-                    student = new Student(
-                            request.getParameter("firstName"),
-                            request.getParameter("lastName"),
-                            simpleDateFormat.parse(request.getParameter("dateOfBirth")),
-                            request.getParameter("phoneNumber"),
-                            request.getParameter("email"),
-                            false,
-                            false,
-                            false
+                    boolean isInternational = (Integer.parseInt(request.getParameter("internation")) == 1 ? true : false);
+                    boolean isPartTime = (Integer.parseInt(request.getParameter("partTime")) == 1 ? true : false);
+                    boolean isRepeating = (Integer.parseInt(request.getParameter("repeating")) == 1 ? true : false);
 
-
-                    );
-                } catch (Exception e) {
+                    student.setFirstName(request.getParameter("firstName"));
+                    student.setLastName(request.getParameter("lastName"));
+                    student.setPhoneNumber(request.getParameter("phone"));
+                    student.setInternational(isInternational);
+                    student.setPartTime(isPartTime);
+                    student.setRepeating(isRepeating);
+                    student.setDateOfBirth(simpleDateFormat.parse(request.getParameter("birth")));
+                    student.setAddress(address);
+                } catch (ParseException e) {
                     throw new RuntimeException(e);
                 }
-                ;
+
+                // Saving the course;
                 try {
                     studentDAO.saveStudent(student);
-                    System.out.println("===============================helllo================");
-                    request.setAttribute("success", "Successfully created the Student");
-                    request.getRequestDispatcher("WEB-INF/createstudent.jsp").forward(request, resp);
-
+                    request.setAttribute("successStudent", "Successfully created the student");
+                    request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request, response);
                 } catch (Exception e) {
-                    request.setAttribute("error", "Failed to create the Student");
-                    request.getRequestDispatcher("WEB-INF/createstudent.jsp").forward(request, resp);
-
+                    request.setAttribute("CreateStudenterror", "Failed to create the student");
+                    request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request, response);
                 }
             } else {
-                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, resp);
-            }
-
-        } else {
-            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, resp);
-
-        }
-    }
-
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String pageRedirect = req.getParameter("page");
-        HttpSession httpSession = req.getSession();
-        Object user = httpSession.getAttribute("authenticatedUser");
-        System.out.println("The user in session is: " + user);
-        if (pageRedirect != null) {
-
-            if (pageRedirect.equals("createstudent")) {
-                req.getRequestDispatcher("WEB-INF/createstudent.jsp").forward(req, resp);
-
+                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
             }
         } else {
-            req.setAttribute("error ", "No user found");
-            req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, resp);
+            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-//                if(pageRedirect.equals("createstudent")){
-//                    if(req.getParameter("saveDataStudent")!=null){
-//                        Student student= new Student();
-//                        String passwordauth = req.getParameter("password");
-//                        String studentfullname = req.getParameter("studentfullname");
-//                        String email = req.getParameter("email");
-//                        try{
-//                            String hashedP= Util.generateHashed512(passwordauth);
-//                            student.setFullName(studentfullname);
-//                            student.setEmail(email);
-//                            studentDAO.saveOrUpdateStudent(student);
-//                        }
-//                        catch (Exception e){
-//                            httpSession.setAttribute("message","Can't create");
-//                        }
-
-//                    }
-//                }
