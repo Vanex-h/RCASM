@@ -9,7 +9,7 @@ body {
 }
 
 thead {
-	color: #6c66e3;
+	color: #374954;
 	font-size: 14px;
 }
 
@@ -67,7 +67,7 @@ hr {
 }
 
 #banner {
-	background: url("images/banner_bg.png") repeat-x scroll left top transparent;
+	background: white;
 	height: 90px;
 	width: 1000px;
 	font-style: normal;
@@ -75,7 +75,7 @@ hr {
 	position: relative;
 }
 .bannerlogo {
-	background: #fff url("images/rcalogo.png") no-repeat;
+	background: #fff url("images/rcalogo3.jpg") no-repeat;
 	height: 90px;
 	width: 100px;
 	font-style: normal;
@@ -133,7 +133,7 @@ hr {
 	border: 1px solid #ccc;
 	border-bottom: 1px solid #777;
 	border-style: solid none solid none;
-	color: #6c66e3;
+	color: #374954;
 	text-align: center;
 	width: 1000px;
 	font-size: x-small;
@@ -155,7 +155,7 @@ hr {
 }
 
 a {
-	color: #6c66e3;
+	color: #374954;
 	cursor: pointer;
 	text-decoration: none;
 	padding-left: 5px;
@@ -168,8 +168,8 @@ a:HOVER {
 }
 
 button {
-	height: 20px;
-	color: #6c66e3;
+	height: 40px;
+	color: #374954;
 	cursor: pointer;
 	background: #fff url("images/bg_image_nav.jpg") bottom repeat-x;
 	border: 1px solid #ccc;
@@ -177,10 +177,10 @@ button {
 }
 
 button:HOVER {
-	height: 20px;
+	height: 40px;
 	color: #fff;
 	cursor: pointer;
-	background: #6c66e3;
+	background: #374954;
 	border: 1px solid #ccc;
 	border-style: solid solid solid solid;
 }
@@ -191,7 +191,7 @@ button:HOVER {
 	width: 630px;
 	font-size: 34px;
 	font-weight: bolder;
-	color: #6c66e3;
+	color: #374954;
 	font-variant: small-caps;
 	/*text-align: right;*/
 	/*float: right;*/
@@ -204,7 +204,7 @@ button:HOVER {
 	width: 360px;
 	font-size: 25px;
 	font-weight: bolder;
-	color: #6c66e3;
+	color: #374954;
 	font-variant: small-caps;
 
 }
@@ -217,7 +217,7 @@ button:HOVER {
 	font-weight: bolder;
 	float: right;
 	margin-right: 0px;
-	background: #6c66e3;
+	background: #374954;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -282,7 +282,7 @@ button:HOVER {
 }
 
 #menu>li>a {
-	color: #6c66e3;
+	color: #374954;
 	font-weight: bold;
 }
 
@@ -299,7 +299,7 @@ button:HOVER {
 }
 
 #menu ul li:hover a {
-	background: #6c66e3;
+	background: #374954;
 	color: #fff;
 	border: 5px solid white;
 }
@@ -363,7 +363,7 @@ ul.primary li.active a,ul.secondary li.active a {
 /* Tabs formating
 ------------------------------------------*/
 ul.tabs {
-	border-bottom: 3px solid #6c66e3;
+	border-bottom: 3px solid #374954;
 	float: left;
 	list-style: none;
 	margin: 0;
@@ -393,18 +393,18 @@ ul.tabs li a {
 }
 
 ul.tabs li a:hover {
-	background:#6c66e3;
+	background:#374954;
 	color: #fff;
 }
 
 ul.tabs li.active {
-	background: #6c66e3;
+	background: #374954;
 	color: #fff;
 }
 
 html ul.tabs li.active,html ul.tabs li.active a:hover,html ul.tabs li.active a
 	{
-	background: #6c66e3;
+	background: #374954;
 	color: #fff;
 }
 
@@ -444,13 +444,13 @@ html .clear-block {
 fieldset{
   padding-top: 1em;
   padding-bottom: 1em;
-  border: 1px solid #6c66e3;
+  border: 1px solid #374954;
 }
 
 #middle legend{
   color: #fff;
-  border: 1px solid #6c66e3;
+  border: 1px solid #374954;
   padding: 1px 5px 0 15px;
-  background: #6c66e3 url("images/star.png") left top no-repeat;
+  background: #374954 url("images/star.png") left top no-repeat;
 	/*border: 5px solid red;*/
 }

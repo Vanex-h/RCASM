@@ -47,7 +47,7 @@
 
         h2 {
             text-align: center;
-            color: #6c66e3;
+            color: #374954;
             font-family: 'Quicksand', sans-serif;
             margin-top: 10px;
         }
@@ -74,7 +74,7 @@
             padding: 10px;
             border: none;
             border-radius: 5px;
-            background-color: #6c66e3;
+            background-color: #374954;
             color: #ffffff;
             font-size: 16px;
             cursor: pointer;
@@ -91,8 +91,7 @@
 </head>
 <body>
 <div class="container">
-<%--    <img src="https://media.licdn.com/dms/image/C560BAQEl6a9tUkSKfg/company-logo_200_200/0/1558604414993?e=2147483647&amp;v=beta&amp;t=liCSw94UkEjwbMZZh8N23ZMYixEAMmZNq2IftvsF97Y"--%>
-<%--         alt="LinkedIn Logo">--%>
+
     <h2>Create Student</h2>
     <p>Welcome to RCA SMIS Course Creation Please Enter Details!!</p>
     <c:if test="${CreateStudenterror != null}">

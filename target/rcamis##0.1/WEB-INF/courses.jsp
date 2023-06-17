@@ -19,20 +19,108 @@
   <link rel="stylesheet" href="css/site.css" type="text/css" />
   <title>Course Registrations</title>
   <style>
+    #layout {
+      background: #374954;
+      color: white;
+      width: 100%;
+    }
+
+    #banner {
+      display: flex;
+      align-items: center;
+      /*padding: 20px;*/
+      width: 100%;
+    }
+
+
+
+    .container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .text_header {
+      font-size: 24px;
+      font-weight: bold;
+      transform: translateX(-146px);
+    }
+
+    .right {
+      border-width: 2px;
+      background: #374954;
+      color: #374954;
+      border-radius: 8px;
+      border-color: #374954;
+      height: 3em;
+      display: flex;
+      align-items: center;
+      width: 52em;
+    }
+
+
+    .menu {
+      margin-left: 10px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      margin: 0 5px;
+    }
+
+    .menu a:hover {
+      color: #3E8760;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    .button img {
+      margin-right: 5px;
+    }
+    #logg:hover{
+      color: #fff;
+      background: transparent;
+      border: white solid 1px;
+      border-radius: 12px;
+      height: 32px;
+      width: 10em;
+    }
+
+
+    .button:hover {
+      color: white;
+      background: transparent;
+      border: white solid 1px;
+      border-radius: 12px;
+      height: 32px;
+      width: 10em;
+    }
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
       width: 100%;
     }
 
-    td, th {
+    td{
       border: 1px solid #dddd;
       text-align: left;
+      color: #374954;
       padding: 8px;
     }
 
     thead{
-      background-color:#6c66e3;
+      background-color: #374954;
       color: white;
       font-family: 'Quicksand', sans-serif;
       font-weight: bold;
@@ -43,21 +131,26 @@
 <div id="layout">
   <div id="banner">
     <div class="bannerlogo"></div>
-    <div class="text_header">RCA Management Information System</div>
-    <div class="right" style="text-align: right;">
-      <c:if test="${authenticatedUser !=null}">
-        <b> <a
-                href="listuser.php?page=profile&&id=${authenticatedUser.id}"><button>Profile
-        </button></a> | <img src="icons/cou.png" /> <font color="#ffffff">${authenticatedUser.userRole}:
-            ${authenticatedUser.username}</font> | <a href="login.ap?page=logout"><font
-                color="#ffffff">Logout</font></a>
-        </b>
-      </c:if>
-      <c:if test="${authenticatedUser ==null}">
-        <div class="menu" align="left">
-          | <a href="login.php?">Login</a> |
-        </div>
-      </c:if>
+    <div class="container">
+      <div class="text_header"> RCA Management Information System</div>
+      <div class="right">
+        <c:if test="${authenticatedUser !=null}">
+          <button class="button" onclick="location.href='listuser.php?page=profile&&id=${authenticatedUser.id}'">
+            <img src="icons/user.png" />
+            Profile
+          </button>
+          <div>
+            <img src="icons/user.png" />
+            <font color="#ffffff">${authenticatedUser.fullName}</font>
+          </div>
+          <a href="login.php?"><font color="#ffffff" id="logg">Logout</font></a>
+        </c:if>
+        <c:if test="${authenticatedUser ==null}">
+          <div class="menu">
+            <a href="login.php?"><font color="white">Login</font></a>
+          </div>
+        </c:if>
+      </div>
     </div>
   </div>
   <div>
@@ -68,7 +161,7 @@
       <div class="options">
 
         <a href="createcourse.php?page=createcourse"><button>
-          <img src="icons/add.png" /> New Course Registration
+          <img src="" /> New Course Registration
         </button></a>
       </div>
       <div class="search">
