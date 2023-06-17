@@ -28,7 +28,7 @@
 		<li>Instructors<ul class="drop">
 			<div>
 				<li><a href="listinstructors.php?page=instructors&&user_role=empl&&action=list"> Instructors</a></li>
-<%--				<li><a href="listuser.php?page=users&&action=list">List of users</a></li>--%>
+
 
 			</div>
 		</ul></li>

@@ -7,7 +7,16 @@ import javax.persistence.*;
 public class Instructor extends Person {
 	private static final long serialVersionUID = 6073878228230771199L;
 	private double salary;
-	private String email;
+	private  String email;
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	private Date remunerationDate;
 	@ManyToMany(cascade= CascadeType.ALL, mappedBy = "instructors")
 	private Set<Course> courses;
@@ -51,10 +60,11 @@ public class Instructor extends Person {
 		this.courses.remove(course);
 		course.getInstructors().remove(this);
 	}
-	public Instructor(String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, double salary, Date remunerationDate) {
+
+	public Instructor(String firstName, String lastName,String email, Date dateOfBirth, String phoneNumber, double salary, Date remunerationDate) {
 		super(firstName, lastName,  dateOfBirth, phoneNumber);
 		this.salary = salary;
-		this.email=email;
 		this.remunerationDate = remunerationDate;
+		this.email=email;
 	}
 }

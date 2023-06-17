@@ -1,228 +1,220 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Pc
-  Date: 6/17/2023
-  Time: 3:00 PM
-  To change this template use File | Settings | File Templates.
---%>
-<?xml version="1.0" encoding="UTF-8" ?>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html
-PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <link rel="stylesheet" href="cssfile.css" type="text/css"/>
-  <title>Instructor Registrations</title>
-  <style type="text/css">
-    * {
-      font-family: Work Sans, serif;
-      color: #99154B;
-    }
-    span {
+  <link rel="stylesheet" href="css/displaytag.css" type="text/css"/>
+  <link rel="stylesheet" href="css/screen.css" type="text/css"/>
+  <link rel="stylesheet" href="css/site.css" type="text/css"/>
+  <title>Marks Registrations</title>
+  <style>
+    #layout {
+      background: #374954;
       color: white;
-    }
-    #button {
-      border: 1px solid #D61F69;
-      border-radius: 5px;
-      background-color: #D61F69;
-      color: white;
-      padding: 10px 15px;
-    }
-    #button:hover {
-      background-color: white;
-      color: #99154B;
-    }
-    h2 {
-      margin-bottom: 1rem;
-      margin-top: 1rem;
-    }
-    #header {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 2rem;
-      justify-content: center;
-      align-items: center;
-    }
-    #profile {
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-    }
-    .span {
-      border: 1px solid #D61F69;
-      padding: 10px;
-      border-radius: 5px;
-    }
-    #bts {
-      border-radius: 50%;
-      border: 1px solid #D61F69;
-    }
-    #logout:hover {
-      background-color: #D61F69;
-      color: white;
-    }
-    .beforeTable {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: white;
-      padding: 1rem;
-      border-bottom-right-radius: 12px;
-      border-bottom-left-radius: 12px;
-      border-bottom: 2px solid #99154B;
-      border-left: 2px solid #99154B;
-      border-right: 2px solid #99154B;
       width: 100%;
     }
-    .table {
+
+    #banner {
+      display: flex;
+      align-items: center;
+      /*padding: 20px;*/
       width: 100%;
     }
-    .td {
-      border: 1px solid #D61F69;
-      text-align: left;
-      padding: 8px;
+
+
+
+    .container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .thead > tr > td {
-      background-color: #99154B;
+
+    .text_header {
+      font-size: 24px;
+      font-weight: bold;
+      transform: translateX(-146px);
+    }
+
+    .right {
+      border-width: 2px;
+      background: #374954;
+      color: #6c66e3;
+      border-radius: 8px;
+      border-color: #6c66e3;
+      height: 3em;
+      display: flex;
+      align-items: center;
+      width: 52em;
+    }
+
+
+    .menu {
+      margin-left: 10px;
+    }
+
+    .menu a {
+      text-decoration: none;
       color: white;
-      border: 1px solid #D61F69;
-      padding: 8px;
-      border-collapse: collapse;
+      margin: 0 5px;
     }
-    fieldset {
-      background-color: white;
+
+    .menu a:hover {
+      color: #3E8760;
     }
-    #id {
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
       border: none;
-      border-radius: 5px;
-      background-color: #F2F2F2;
-      color: #333333;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      color: white;
+      cursor: pointer;
+      margin: 0 5px;
     }
-    .beforeOptions {
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-      border-top: 2px #99154B solid;
-      border-right: 2px #99154B solid;
-      border-left: 2px solid #99154B;
-      padding: 15px;
-      height: 4vw;
+
+    .button img {
+      margin-right: 5px;
     }
-    .fullname {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    #logg:hover{
+      color: #fff;
+      background: transparent;
+      border: white solid 1px;
+      border-radius: 12px;
+      text-decoration: none;
+      height: 32px;
+      width: 10em;
+      line-height: 32px;
+    }
+
+
+    .button:hover {
+      color: white;
+      background: transparent;
+      border: white solid 1px;
+      border-radius: 12px;
+      height: 32px;
+      width: 10em;
+    }
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddd;
+      text-align: left;
+      color: #374954;
+      padding: 8px;
+    }
+
+    thead tr td{
+      background-color: #374954;
+      color: white;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-<div>
-  <div id="header">
+<div id="layout">
+  <div id="banner">
     <div class="bannerlogo"></div>
-    <h2>RCA Management Information System</h2>
-  </div>
-  <c:if test="${authenticatedUser !=null}">
-    <b>
-      <div id="profile">
-        <div class="fullname">
-          <img src="icons/bts.png" id="bts" width="50px" height="50px"/>
-          <span style="color: #99154B">${authenticatedUser.fullName}</span>
-        </div>
-        <a href="login.php?logout=logout" class="span" id="logout">Logout</a>
-        <a href="listuser.php?page=profile&&id=${authenticatedUser.id}" id="button">Profile</a>
+    <div class="container">
+      <div class="text_header"> RCA Management Information System</div>
+      <div class="right">
+        <c:if test="${authenticatedUser !=null}">
+          <button class="button" onclick="location.href='listuser.php?page=profile&&id=${authenticatedUser.id}'">
+            <img src="icons/user.png" />
+            Profile
+          </button>
+          <div>
+              <%--                        <img src="icons/user.png" />--%>
+            <font color="#ffffff">${authenticatedUser.fullName}</font>
+          </div>
+          <a href="login.php?" id="logg"><font color="#ffffff" >Logout</font></a>
+        </c:if>
+        <c:if test="${authenticatedUser ==null}">
+          <div class="menu">
+            <a href="login.php?"><font color="white">Login</font></a>
+          </div>
+        </c:if>
       </div>
-    </b>
-  </c:if>
-  <c:if test="${authenticatedUser ==null}">
-    <div class="menu" align="left">
-      <a href="login.php?"><span>Login</span></a>
     </div>
-  </c:if>
-</div>
-<div>
-  <%@ include file="menu.jsp" %>
-</div>
-<div id="middle">
-  <c:if test="${authenticatedUser !=null}">
-    <div class="beforeOptions" style="margin-top: -20%">
+  </div>
+  <div>
+    <%@ include file="menu.jsp"%>
+  </div>
+  <div id="middle">
+    <c:if test="${authenticatedUser !=null}">
       <div class="options">
-        <a href="createinstructor.php?page=createinstructor" class="ba"
-           style="padding: 15px;display: flex;align-items: center;"
-           style="padding: 12px">
-          <img src="icons/teacher.png" height="30px" width="30px"/> Create New
-          Instructor
+        <c:out value="${emptyM}"/>
+        <a href="createmarks.php?page=createmarks">
+          <button>
+            <img src="icons/user_add.png"/> Create New Marks
+          </button>
         </a>
       </div>
       <div class="search">
         <form action="listuser.php" method="get">
           <table>
             <tr>
-              <td>Enter User ID</td>
+              <td style="color: #000000;">Enter User ID</td>
               <td><input type="text" name="id" id="id"/></td>
-              <td><input type='submit' name="userregistrationsearch" value='search'/>
-              </td>
+              <td><input type='submit' name="userregistrationsearch"
+                         value='search'/></td>
             </tr>
           </table>
         </form>
       </div>
-    </div>
-    <div class="beforeTable">
-      <table>
-        <tr>
-          <td align="left">
-            <input type="text" size="15" maxlength="50" readonly="readonly" name="savedBy"
-                   id="savedBy" hidden="hidden" value="${authenticatedUser.id}"/>
-          </td>
-          <td>
-            <select name="userRole" id="userRole">
-              <option selected="selected" value="NONE">
-                Select Role
-              </option>
-              <c:forEach items="${userRoles}" var="usrRole" varStatus="usrRolestatus">
-                <option value="${usrRole}">
-                  <c:out value="${usrRole.getRoleDescription()}"/>
-                </option>
-              </c:forEach>
-            </select>
-          </td>
-          <td align="right">
-            <input type="submit" name="saveDataUserStatus" value="Save Status"/>
-          </td>
-        </tr>
-      </table>
-      <table class="table">
-        <thead class="thead">
-        <tr>
-          <td>FirstName</td>
-          <td>LastName</td>
-          <td>DateOfBirth</td>
-          <td>PhoneNumber</td>
-          <td>Email</td>
-          <td>Remuneration Date</td>
-          <td>Salary</td>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${instructors}" var="inst" varStatus="instStatus">
+      <hr/>
+      <table style="border: 0;">
+        <td align="left"><input type="text" size="15"
+                                maxlength="50" readonly="readonly" name="savedBy" id="savedBy"
+                                hidden="hidden" value="${authenticatedUser.id}"/></td>
+        <table>
+          <thead>
           <tr>
-            <td class="td">${inst.getFirstName()}</td>
-            <td class="td">${inst.getLastName()}</td>
-            <td class="td">${inst.getDateOfBirth()}</td>
-            <td class="td">${inst.getPhoneNumber()}</td>
-            <td class="td">${inst.getEmail()}</td>
-            <td class="td">${inst.getRemunerationDate()}</td>
-            <td class="td">${inst.getSalary()}</td>
+            <td>Instructor Id</td>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>Date Of Birth</td>
+            <td>Telephone Number</td>
+            <td>Salary</td>
+            <td>Email</td>
+            <td>Enumeration Date</td>
           </tr>
-        </c:forEach>
-        </tbody>
+          </thead>
+          <tbody>
+          <c:forEach items="${instructors}" var="student" varStatus="usrstatus">
+            <tr>
+              <td>${student.id}</td>
+              <td>${student.firstName}</td>
+              <td>${student.lastName}</td>
+              <td>${student.dateOfBirth}</td>
+              <td>${student.phoneNumber}</td>
+              <td>${student.salary}</td>
+              <td>${student.email}</td>
+              <td>${student.remunerationDate}</td>
+
+
+                <%--                <td>${csr.isCancelled}</td>--%>
+              <td><input type="checkbox" name="usrIds"
+                         value="${usr.id}" /></td>
+            </tr>
+          </c:forEach>
+          </tbody>
+        </table>
       </table>
-    </div>
-  </c:if>
+    </c:if>
+  </div>
+  <%@ include file="footer.jsp" %>
 </div>
-<%@ include file="footer.jsp" %>
 </body>
 </html>

@@ -76,7 +76,7 @@ public class InstructorDAOImpl extends DAO implements InstructorDAO {
     public List<Instructor> getAllInstructors() {
         try {
             begin();
-            Query query = getSession().createQuery("from Instructor");
+            Query query = getSession().createQuery("FROM Instructor");
             List<Instructor> instructors = query.list();
             commit();
             return instructors;
