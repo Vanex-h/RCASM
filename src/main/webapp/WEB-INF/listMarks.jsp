@@ -85,8 +85,10 @@
             background: transparent;
             border: white solid 1px;
             border-radius: 12px;
+            text-decoration: none;
             height: 32px;
             width: 10em;
+            line-height: 32px;
         }
 
 
@@ -111,7 +113,7 @@
             padding: 8px;
         }
 
-        thead{
+        thead tr td{
             background-color: #374954;
             color: white;
             font-family: 'Quicksand', sans-serif;
@@ -132,10 +134,10 @@
                         Profile
                     </button>
                     <div>
-                        <img src="icons/user.png" />
+<%--                        <img src="icons/user.png" />--%>
                         <font color="#ffffff">${authenticatedUser.fullName}</font>
                     </div>
-                    <a href="login.php?"><font color="#ffffff" id="logg">Logout</font></a>
+                    <a href="login.php?" id="logg"><font color="#ffffff" >Logout</font></a>
                 </c:if>
                 <c:if test="${authenticatedUser ==null}">
                     <div class="menu">

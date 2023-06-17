@@ -5,6 +5,6 @@
 <jsp:include page="headeremployee.jsp">
 	<jsp:param value="Home Employee" name="title" /></jsp:include>
 <div id="middle" align="center">
-	<img src="images/fellow.jpg" style="width: 620px; height: 400px" />
+	<img src="images/rca.jpg" style="width:100%; object-fit: contain; height: auto; brightness:0.7;filter: blur(5px);" />
 </div>
 <%@ include file="footer.jsp"%>

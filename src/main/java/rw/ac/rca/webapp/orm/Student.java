@@ -31,9 +31,7 @@ public class Student extends Person{
 		this.isRepeating = isRepeating;
 	}
 
-	//	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "student")
-//	private List<Enrol> enrols;
-//
+
 	@ManyToOne
 	@JoinColumn(name = "address_id")
 	private Address address;
@@ -57,12 +55,7 @@ public class Student extends Person{
 		this.isPartTime = isPartTime;
 	}
 
-//	public List<Enrol> getEnrols() {
-//   		return enrols;
-//	}
-//	public void setEnrollments(List<Enrol> enrols) {
-//		this.enrols = enrols;
-//	}
+
 
 	public boolean isRepeating() {
 		return isRepeating;
@@ -83,11 +76,6 @@ public class Student extends Person{
 	public String getName() {
 		return getFirstName() + " " + getLastName();
 	}
-
-//	@Override
-//	String getAllNames() {
-//		return getFirstName()+ " "+ getLastName();
-//	}
 
 
 }

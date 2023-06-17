@@ -107,13 +107,13 @@
         </p>
     </c:if>
     <form  action="createparent.php?page=createparent" method="post">
-        <input type="text" placeholder="Student's First Name" required name="firstName">
-        <input type="text" placeholder="Student's Last Name" required name="lastName">
+        <input type="text" placeholder="Parent's First Name" required name="firstName">
+        <input type="text" placeholder="Parent's Last Name" required name="lastName">
         <input type="text" placeholder="Phone Number" required name="phoneNumber">
         <input type="text" placeholder="nationalId" required name="nationalId">
         <input type="number" placeholder="schoolFees" required name="schoolfees">
 <%--        <input type="number" placeholder="studentId" required name="studentId" >--%>
-        <input type="date" placeholder="dateOfBirth" required name="dateOfBirth of student" >
+        <input type="date" placeholder="dateOfBirth of child" required name="dateOfBirth of student" >
         <input type="submit" value="Create Parent">
     </form>
 

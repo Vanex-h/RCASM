@@ -8,16 +8,14 @@ import rw.ac.rca.webapp.dao.StudentDAO;
 import rw.ac.rca.webapp.dao.impl.StudentDAOImpl;
 import rw.ac.rca.webapp.orm.Student;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 
 public class StudentReportPdf extends HttpServlet {
@@ -51,7 +49,7 @@ public class StudentReportPdf extends HttpServlet {
                     PdfWriter.getInstance(document, new FileOutputStream(file));
                     document.open();
                     for (Student student : students) {
-                        String fullName = "Name: " + student.getFirstName() + " " + student.getLastName() + " ;";
+                        String fullName = "Name: " + student.getName() +" ;";
                         String phoneNumber = "PhoneNumber: " + student.getPhoneNumber() + " ;";
                         String dob = "Date Of Birth : " + student.getDateOfBirth().toString() + " ;";
                         // Write each row of data as a paragraph in the PDF
